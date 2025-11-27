@@ -1,17 +1,13 @@
-import { type EmailOtpType } from '@supabase/supabase-js';
-import { type NextRequest, NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
+import { NextResponse } from 'next/server';
+import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
-export async function GET(request: NextRequest) {
+export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
-  const token_hash = searchParams.get('token_hash');
-  const type = searchParams.get('type') as EmailOtpType | null;
+  const code = searchParams.get('code');
   const next = searchParams.get('next') ?? '/dashboard';
 
-  const redirectTo = new URL(next, origin);
-
-  if (token_hash && type) {
+  if (code) {
     const cookieStore = await cookies();
 
     const supabase = createServerClient(
@@ -23,32 +19,24 @@ export async function GET(request: NextRequest) {
             return cookieStore.getAll();
           },
           setAll(cookiesToSet) {
-            try {
-              cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options)
-              );
-            } catch {
-              // Server Component, cookies() peut échouer dans certains contextes
-            }
+            cookiesToSet.forEach(({ name, value, options }) => {
+              cookieStore.set(name, value, options as CookieOptions);
+            });
           },
         },
       }
     );
 
-    const { error } = await supabase.auth.verifyOtp({
-      type,
-      token_hash,
-    });
+    const { error } = await supabase.auth.exchangeCodeForSession(code);
 
-    if (error) {
-      console.error('Error verifying OTP:', error);
-      redirectTo.pathname = '/login';
-      redirectTo.searchParams.set('error', 'auth_failed');
-      return NextResponse.redirect(redirectTo);
+    if (!error) {
+      return NextResponse.redirect(`${origin}${next}`);
     }
+
+    console.error('Error exchanging code for session:', error);
   }
 
-  // Redirection vers la destination (dashboard par défaut)
-  return NextResponse.redirect(redirectTo);
+  // Si erreur ou pas de code, retour login avec erreur
+  return NextResponse.redirect(`${origin}/login?error=Could not login with code`);
 }
 

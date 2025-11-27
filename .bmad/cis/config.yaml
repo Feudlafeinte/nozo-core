@@ -1,0 +1,9 @@
+# CIS Module Configuration (minimal)
+
+project_name: nozobrain
+user_name: Feud
+output_folder: '{project-root}/docs'
+document_output_language: French
+standalone: true
+
+

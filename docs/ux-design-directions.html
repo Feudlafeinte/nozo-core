@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NOZO CORE — Design Directions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --radius: 0.5rem;
+      --nozo-red: #f3130c;
+      --nozo-pink: #c51172;
+      --nozo-blue: #089ccb;
+    }
+    [data-theme="dark"] {
+      --bg: #0c0c0c;
+      --surface: #1c1c1c;
+      --border: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --text-muted: rgba(255,255,255,0.64);
+    }
+    .sidebar { width: 18rem; }
+    .card { border-radius: var(--radius); }
+  </style>
+</head>
+<body class="bg-[var(--bg)] text-[var(--text)]">
+  <nav class="sticky top-0 z-50 bg-[color:rgba(12,12,12,0.7)] backdrop-blur-xl border-b border-[var(--border)]">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
+      <span class="font-semibold">NOZO ELEGANCE — Directions</span>
+      <a href="#d1" class="text-sm text-[var(--text-muted)] hover:text-[var(--text)]">#1</a>
+      <a href="#d2" class="text-sm text-[var(--text-muted)] hover:text-[var(--text)]">#2</a>
+      <a href="#d3" class="text-sm text-[var(--text-muted)] hover:text-[var(--text)]">#3</a>
+      <a href="#d4" class="text-sm text-[var(--text-muted)] hover:text-[var(--text)]">#4</a>
+      <a href="#d5" class="text-sm text-[var(--text-muted)] hover:text-[var(--text)]">#5</a>
+      <a href="#d6" class="text-sm text-[var(--text-muted)] hover:text-[var(--text)]">#6</a>
+    </div>
+  </nav>
+
+  <!-- Six variantes de layout -->
+  <section id="d1" class="max-w-6xl mx-auto p-6 min-h-[90vh]">
+    <h2 class="text-xl font-medium mb-4">Direction #1 — Sidebar dense, header sobre</h2>
+    <div class="flex">
+      <aside class="sidebar h-[70vh] bg-[color:rgba(28,28,28,0.8)] backdrop-blur-xl border border-[var(--border)] card p-4 mr-6">
+        <div class="flex items-center justify-between mb-4">
+          <span class="font-semibold">NOZO</span>
+          <button title="Theme" class="w-8 h-8 rounded-full border border-[var(--border)]"></button>
+        </div>
+        <ul class="space-y-2 text-sm">
+          <li class="text-[var(--text)]">Répertoire</li>
+          <li class="text-[var(--text)]">Opportunités</li>
+          <li class="text-[var(--text)] font-semibold">Projets</li>
+          <li class="text-[var(--text)]">Dashboard</li>
+        </ul>
+      </aside>
+      <main class="flex-1">
+        <header class="sticky top-20 bg-[color:rgba(12,12,12,0.7)] backdrop-blur-xl border-b border-[var(--border)] card p-3 mb-4">Header sticky</header>
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-4">
+          <h3 class="font-semibold mb-2">Dashboard (opaque)</h3>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="card bg-[#111] p-3 border border-[var(--border)]">Carte</div>
+            <div class="card bg-[#111] p-3 border border-[var(--border)]">Carte</div>
+            <div class="card bg-[#111] p-3 border border-[var(--border)]">Carte</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <section id="d2" class="max-w-6xl mx-auto p-6 min-h-[90vh]">
+    <h2 class="text-xl font-medium mb-4">Direction #2 — Sidebar minimal, contenu spacieux</h2>
+    <div class="flex">
+      <aside class="sidebar h-[70vh] bg-[color:rgba(28,28,28,0.7)] backdrop-blur-xl border border-[var(--border)] card p-3 mr-6">
+        <ul class="space-y-3 text-sm">
+          <li>Répertoire</li><li>Opportunités</li><li class="font-semibold">Projets</li><li>Dashboard</li>
+        </ul>
+      </aside>
+      <main class="flex-1 space-y-4">
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-6">Hero / Résumé</div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="card bg-[var(--surface)] border border-[var(--border)] p-4">Bloc A</div>
+          <div class="card bg-[var(--surface)] border border-[var(--border)] p-4">Bloc B</div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <section id="d3" class="max-w-6xl mx-auto p-6 min-h-[90vh]">
+    <h2 class="text-xl font-medium mb-4">Direction #3 — Sidebar accent WORK (Bleu)</h2>
+    <div class="flex">
+      <aside class="sidebar h-[70vh] bg-[color:rgba(28,28,28,0.8)] backdrop-blur-xl border border-[var(--border)] card p-4 mr-6">
+        <button class="w-full mb-3 px-3 py-2 rounded text-white" style="background:var(--nozo-blue)">WORK</button>
+        <ul class="space-y-2 text-sm">
+          <li>Répertoire</li><li>Opportunités</li><li class="font-semibold">Projets</li><li>Dashboard</li>
+        </ul>
+      </aside>
+      <main class="flex-1">
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-4">Kanban (opaque)</div>
+      </main>
+    </div>
+  </section>
+
+  <section id="d4" class="max-w-6xl mx-auto p-6 min-h-[90vh]">
+    <h2 class="text-xl font-medium mb-4">Direction #4 — Sidebar accent MONEY (Rose)</h2>
+    <div class="flex">
+      <aside class="sidebar h-[70vh] bg-[color:rgba(28,28,28,0.8)] backdrop-blur-xl border border-[var(--border)] card p-4 mr-6">
+        <button class="w-full mb-3 px-3 py-2 rounded text-white" style="background:var(--nozo-pink)">MONEY</button>
+        <ul class="space-y-2 text-sm">
+          <li>Répertoire</li><li>Opportunités</li><li class="font-semibold">Projets</li><li>Dashboard</li>
+        </ul>
+      </aside>
+      <main class="flex-1">
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-4">Synthèse financière</div>
+      </main>
+    </div>
+  </section>
+
+  <section id="d5" class="max-w-6xl mx-auto p-6 min-h-[90vh]">
+    <h2 class="text-xl font-medium mb-4">Direction #5 — Dense (datas), header discret</h2>
+    <div class="flex">
+      <aside class="sidebar h-[70vh] bg-[color:rgba(28,28,28,0.7)] backdrop-blur-xl border border-[var(--border)] card p-3 mr-6">
+        <ul class="space-y-2 text-sm">
+          <li>Répertoire</li><li>Opportunités</li><li class="font-semibold">Projets</li><li>Dashboard</li>
+        </ul>
+      </aside>
+      <main class="flex-1">
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-2">
+          <table class="w-full text-sm">
+            <tr class="border-b border-[var(--border)]"><th class="text-left py-2">Projet</th><th class="text-left">Budget</th><th class="text-left">Reste</th></tr>
+            <tr class="border-b border-[var(--border)]"><td>Campagne A</td><td>30k€</td><td class="text-[var(--nozo-red)]">5k€</td></tr>
+            <tr class="border-b border-[var(--border)]"><td>Site B</td><td>18k€</td><td>0€</td></tr>
+          </table>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <section id="d6" class="max-w-6xl mx-auto p-6 min-h-[90vh]">
+    <h2 class="text-xl font-medium mb-4">Direction #6 — Max lisibilité, cartes aérées</h2>
+    <div class="flex">
+      <aside class="sidebar h-[70vh] bg-[color:rgba(28,28,28,0.6)] backdrop-blur-xl border border-[var(--border)] card p-3 mr-6">
+        <ul class="space-y-3 text-sm">
+          <li>Répertoire</li><li>Opportunités</li><li class="font-semibold">Projets</li><li>Dashboard</li>
+        </ul>
+      </aside>
+      <main class="flex-1 grid grid-cols-2 gap-4">
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-6">Bloc</div>
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-6">Bloc</div>
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-6">Bloc</div>
+        <div class="card bg-[var(--surface)] border border-[var(--border)] p-6">Bloc</div>
+      </main>
+    </div>
+  </section>
+</body>
+</html>
+

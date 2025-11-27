@@ -1,0 +1,89 @@
+# generated: 2025-11-27T00:00:00Z
+# project: nozobrain
+# project_key: n/a
+# tracking_system: file-system
+# story_location: /Users/feud/Documents/nozobrain/docs/sprint-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic exists in epic file but not contexted
+#   - contexted: Epic tech context created (required before drafting stories)
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - drafted: Story file created in stories folder
+#   - ready-for-dev: Draft approved and story context created
+#   - in-progress: Developer actively working on implementation
+#   - review: Under SM review (via code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - completed: Retrospective has been done
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epics should be 'contexted' before stories can be 'drafted'
+# - Stories can be worked in parallel if team capacity allows
+# - SM drafts next story after previous one is 'done' to incorporate learnings
+
+generated: 2025-11-27T00:00:00Z
+project: nozobrain
+project_key: n/a
+tracking_system: file-system
+story_location: /Users/feud/Documents/nozobrain/docs/sprint-artifacts
+
+development_status:
+  epic-1: contexted
+  1-1-initialiser-le-projet-et-le-pipeline: drafted
+  1-2-base-rbac-technique: drafted
+  epic-1-retrospective: optional
+
+  epic-2: backlog
+  2-1-creer-une-opportunite-liee-a-un-client: backlog
+  2-2-joindre-un-pdf-de-devis: backlog
+  2-3-marquer-gagnee-et-convertir-en-projet: backlog
+  epic-2-retrospective: optional
+
+  epic-3: backlog
+  3-1-creer-listes-taches-sous-taches: backlog
+  3-2-gerer-statuts-d-avancement: backlog
+  3-3-vues-liste-kanban: backlog
+  epic-3-retrospective: optional
+
+  epic-4: backlog
+  4-1-definir-maj-budget-signe: backlog
+  4-2-creer-un-extra-avec-statut-financier: backlog
+  4-3-creer-factures-acompte-solde-pdf: backlog
+  4-4-calcul-reste-a-facturer: backlog
+  4-5-bloquer-cloture-si-extras-a-facturer: backlog
+  epic-4-retrospective: optional
+
+  epic-5: backlog
+  5-1-vue-dashboard: backlog
+  5-2-filtres-par-client-projet-etats: backlog
+  5-3-recherche-globale: backlog
+  5-4-etats-d-erreur-incoherences: backlog
+  5-5-api-interne-synthese: backlog
+  epic-5-retrospective: optional
+
+  epic-6: backlog
+  6-1-appliquer-permissions-par-role: drafted
+  6-2-journalisation-audit-des-evenements-critiques: backlog
+  epic-6-retrospective: optional
+
+  epic-7: backlog
+  7-1-export-documents-depuis-un-projet: backlog
+  7-2-import-pdf-de-devis-facture-et-liaison-correcte: backlog
+  7-3-telechargement-direct-des-pdfs-lies: backlog
+  epic-7-retrospective: optional
+
+  epic-8: backlog
+  8-1-manifest-install-prompt: drafted
+  8-2-display-mode-standalone: drafted
+  8-3-icons-apple-touch: drafted
+  8-4-offline-fallback-mvp-light: drafted
+  epic-8-retrospective: optional
+
+

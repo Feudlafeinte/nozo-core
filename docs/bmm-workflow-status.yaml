@@ -1,0 +1,91 @@
+# Workflow Status Template
+
+# This tracks progress through BMM methodology Analysis, Planning, and Solutioning phases.
+# Implementation phase is tracked separately in sprint-status.yaml
+
+# STATUS DEFINITIONS:
+# ==================
+# Initial Status (before completion):
+#   - required: Must be completed to progress
+#   - optional: Can be completed but not required
+#   - recommended: Strongly suggested but not required
+#   - conditional: Required only if certain conditions met (e.g., if_has_ui)
+#
+# Completion Status:
+#   - {file-path}: File created/found (e.g., "docs/product-brief.md")
+#   - skipped: Optional/conditional workflow that was skipped
+
+generated: "{{generated}}"
+project: "NOZO CORE"
+user_description: |
+  Objectif : Développer un outil "tout-en-un" combinant Gestion de Projet, CRM et Suivi Financier Light. L'objectif est de piloter la production de l'agence tout en gardant une vision claire de la rentabilité par projet.
+
+  Problème à résoudre : La déconnexion entre la réalisation des tâches et leur facturation. Actuellement, il est difficile de savoir si une tâche terminée a bien été facturée. Je veux une granularité fine : un Projet est composé de Sous-tâches (avec vue Kanban/Liste). Ces sous-tâches doivent pouvoir correspondre aux lignes du devis initial. Le système doit permettre de suivre l'avancement (A faire / En cours / Fait) ET le statut financier (À facturer / Facturé / Non facturable) de chaque élément, y compris les ajouts en cours de route.
+
+  Utilisateurs cibles : L'équipe de l'agence (Chefs de projet, Créatifs, Admin).
+
+  État du projet : Projet Greenfield (on part de zéro).
+project_type: "{{project_type}}"
+selected_track: "method"
+field_type: "greenfield"
+brainstorm_requested: true
+research_requested: false
+product_brief_requested: true
+selected_discovery:
+  - brainstorm
+  - product-brief
+has_discovery: true
+generated: "2025-11-26T00:00:00Z"
+workflow_path: ".bmad/bmm/workflows/workflow-status/paths/method-greenfield.yaml"
+workflow_status:
+  phases:
+    - phase: 0
+      name: "Discovery (Optional)"
+      items:
+        - id: "brainstorm-project"
+          status: "skipped"
+          agent: "analyst"
+        - id: "research"
+          status: "skipped"
+          agent: "analyst"
+        - id: "product-brief"
+          status: "/Users/feud/Documents/nozobrain/docs/bmm-product-brief-NOZO-CORE-2025-11-26.md"
+          agent: "analyst"
+    - phase: 1
+      name: "Planning"
+      items:
+        - id: "prd"
+          status: "/Users/feud/Documents/nozobrain/docs/prd.md"
+          agent: "pm"
+        - id: "validate-prd"
+          status: "optional"
+          agent: "pm"
+        - id: "create-design"
+          status: "conditional_if_has_ui"
+          agent: "ux-designer"
+    - phase: 2
+      name: "Solutioning"
+      items:
+        - id: "create-architecture"
+          status: "required"
+          agent: "architect"
+        - id: "create-epics-and-stories"
+          status: "/Users/feud/Documents/nozobrain/docs/epics.md"
+          agent: "pm"
+        - id: "test-design"
+          status: "recommended"
+          agent: "tea"
+        - id: "validate-architecture"
+          status: "optional"
+          agent: "architect"
+        - id: "implementation-readiness"
+          status: "required"
+          agent: "architect"
+    - phase: 3
+      name: "Implementation"
+      items:
+        - id: "sprint-planning"
+          status: "required"
+          agent: "sm"
+
+

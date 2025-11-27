@@ -1,0 +1,58 @@
+# NOZO Roadmap → Sprints 1–4
+# Mapping explicite des stories vers les sprints
+#
+# Référence Roadmap imposée:
+# Sprint 1: Setup Next.js/Supabase/Shadcn (via MCP), PWA config, Auth & Roles (RLS), Structure UI (Sidebar Glass)
+# Sprint 2: Core WORK (CRUD Projets, Kanban Tâches)
+# Sprint 3: Core MONEY (financial_items, invoices, Reste à facturer, PDF Storage)
+# Sprint 4: Dashboard & Analytics, Optimisation Mobile finale
+
+sprints:
+  1:
+    name: "Setup & Auth"
+    items:
+      # Setup (Epic 1)
+      - key: "1-1-initialiser-le-projet-et-le-pipeline"
+      - key: "1-2-base-rbac-technique"
+      # Auth & Roles (Epic 6)
+      - key: "6-1-appliquer-permissions-par-role"
+      # PWA (Epic 8)
+      - key: "8-1-manifest-install-prompt"
+      - key: "8-2-display-mode-standalone"
+      - key: "8-3-icons-apple-touch"
+      - key: "8-4-offline-fallback-mvp-light"
+
+  2:
+    name: "Core WORK"
+    items:
+      # CRM minimal prerequisite si besoin d’amorcer projets
+      - key: "2-1-creer-une-opportunite-liee-a-un-client"
+      - key: "2-3-marquer-gagnee-et-convertir-en-projet"
+      # WORK
+      - key: "3-1-creer-listes-taches-sous-taches"
+      - key: "3-2-gerer-statuts-d-avancement"
+      - key: "3-3-vues-liste-kanban"
+
+  3:
+    name: "Core MONEY"
+    items:
+      - key: "4-1-definir-maj-budget-signe"
+      - key: "4-2-creer-un-extra-avec-statut-financier"
+      - key: "4-3-creer-factures-acompte-solde-pdf"
+      - key: "4-4-calcul-reste-a-facturer"
+      - key: "4-5-bloquer-cloture-si-extras-a-facturer"
+      # Documents/PDF liés
+      - key: "7-2-import-pdf-de-devis-facture-et-liaison-correcte"
+      - key: "7-3-telechargement-direct-des-pdfs-lies"
+
+  4:
+    name: "Finish"
+    items:
+      - key: "5-1-vue-dashboard"
+      - key: "5-2-filtres-par-client-projet-etats"
+      - key: "5-3-recherche-globale"
+      - key: "5-4-etats-d-erreur-incoherences"
+      - key: "5-5-api-interne-synthese"
+      # Finalisation Docs
+      - key: "7-1-export-documents-depuis-un-projet"
+

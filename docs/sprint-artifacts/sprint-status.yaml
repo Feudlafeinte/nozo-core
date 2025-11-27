@@ -36,8 +36,8 @@ story_location: /Users/feud/Documents/nozobrain/docs/sprint-artifacts
 
 development_status:
   epic-1: contexted
-  1-1-initialiser-le-projet-et-le-pipeline: drafted
-  1-2-base-rbac-technique: drafted
+  1-1-initialiser-le-projet-et-le-pipeline: done
+  1-2-base-rbac-technique: in-progress
   epic-1-retrospective: optional
 
   epic-2: backlog
